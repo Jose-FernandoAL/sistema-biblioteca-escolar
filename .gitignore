@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+
+livros.json
+alunos.json
+emprestimos.json
