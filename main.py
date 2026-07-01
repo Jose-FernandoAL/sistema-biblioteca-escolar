@@ -1,5 +1,5 @@
+from relatorios import listar_emprestimos_atrasados, listar_emprestimos_detalhados
 from database import carregar_dados, salvar_dados
-from relatorios import listar_emprestimos_atrasados
 
 from alunos import (
     cadastrar_aluno,
@@ -242,7 +242,10 @@ def opcao_devolver_livro(dados):
 
 
 def opcao_listar_emprestimos(dados, apenas_ativos=False):
-    emprestimos = listar_emprestimos(dados, apenas_ativos=apenas_ativos)
+    emprestimos = listar_emprestimos_detalhados(
+        dados,
+        apenas_ativos=apenas_ativos
+    )
 
     if not emprestimos:
         print("\nNenhum empréstimo encontrado.")
@@ -251,9 +254,11 @@ def opcao_listar_emprestimos(dados, apenas_ativos=False):
     print("\nEmpréstimos:")
     for emprestimo in emprestimos:
         print(
-            f'ID: {emprestimo["id"]} | '
-            f'Aluno ID: {emprestimo["aluno_id"]} | '
-            f'Livro ID: {emprestimo["livro_id"]} | '
+            f'ID: {emprestimo["emprestimo_id"]} | '
+            f'Aluno: {emprestimo["aluno_nome"]} | '
+            f'Turma: {emprestimo["turma"]} | '
+            f'Livro: {emprestimo["livro_titulo"]} | '
+            f'Autor: {emprestimo["livro_autor"]} | '
             f'Empréstimo: {emprestimo["data_emprestimo"]} | '
             f'Limite: {emprestimo["data_limite"]} | '
             f'Devolução: {emprestimo["data_devolucao"]} | '
