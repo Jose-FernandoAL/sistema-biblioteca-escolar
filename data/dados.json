@@ -1,0 +1,71 @@
+{
+    "alunos": [
+        {
+            "id": 1,
+            "nome": "Aluno Teste",
+            "turma": "6º A",
+            "matricula": "",
+            "ativo": true
+        },
+        {
+            "id": 2,
+            "nome": "Maria Eduarda Silva",
+            "turma": "6º A",
+            "matricula": "2026001",
+            "ativo": true
+        },
+        {
+            "id": 3,
+            "nome": "Jose Fernando",
+            "turma": "3 A4",
+            "matricula": "",
+            "ativo": true
+        }
+    ],
+    "livros": [
+        {
+            "id": 1,
+            "titulo": "Dom Casmurro",
+            "autor": "Machado de Assis",
+            "categoria": "Literatura",
+            "isbn": "",
+            "estante": "B",
+            "prateleira": 2,
+            "quantidade_total": 3,
+            "quantidade_disponivel": 3,
+            "etiqueta": "LIT-B-02-0001"
+        },
+        {
+            "id": 2,
+            "titulo": "Quarta Asa",
+            "autor": "|Rebecca Yarros",
+            "categoria": "Ficçao",
+            "isbn": "",
+            "estante": "A",
+            "prateleira": 2,
+            "quantidade_total": 2,
+            "quantidade_disponivel": 1,
+            "etiqueta": "FIC-A-02-0002"
+        }
+    ],
+    "emprestimos": [
+        {
+            "id": 1,
+            "aluno_id": 1,
+            "livro_id": 1,
+            "data_emprestimo": "2026-07-01",
+            "data_limite": "2026-07-08",
+            "data_devolucao": "2026-07-01",
+            "status": "devolvido"
+        },
+        {
+            "id": 2,
+            "aluno_id": 3,
+            "livro_id": 2,
+            "data_emprestimo": "2026-07-01",
+            "data_limite": "2026-07-10",
+            "data_devolucao": null,
+            "status": "emprestado"
+        }
+    ]
+}
