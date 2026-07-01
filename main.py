@@ -1,4 +1,5 @@
 from database import carregar_dados, salvar_dados
+from relatorios import listar_emprestimos_atrasados
 
 from alunos import (
     cadastrar_aluno,
@@ -37,6 +38,7 @@ def mostrar_menu():
     print("8. Devolver livro")
     print("9. Listar empréstimos ativos")
     print("10. Listar todos os empréstimos")
+    print("11. Relatório de empréstimos atrasados")
     print("0. Sair")
     print("=" * 40)
 
@@ -60,6 +62,24 @@ def opcao_cadastrar_aluno(dados):
     else:
         print("\nErro:", resultado)
 
+def opcao_relatorio_atrasados(dados):
+    atrasados = listar_emprestimos_atrasados(dados)
+
+    if not atrasados:
+        print("\nNenhum empréstimo atrasado.")
+        return
+
+    print("\nEmpréstimos atrasados:")
+
+    for item in atrasados:
+        print(
+            f'ID Empréstimo: {item["emprestimo_id"]} | '
+            f'Aluno: {item["aluno_nome"]} | '
+            f'Turma: {item["turma"]} | '
+            f'Livro: {item["livro_titulo"]} | '
+            f'Limite: {item["data_limite"]} | '
+            f'Dias de atraso: {item["dias_atraso"]}'
+        )
 
 def opcao_listar_alunos(dados):
     alunos = listar_alunos(dados)
@@ -278,6 +298,9 @@ def main():
 
         elif opcao == "10":
             opcao_listar_emprestimos(dados, apenas_ativos=False)
+        
+        elif opcao == "11":
+            opcao_relatorio_atrasados(dados)
 
         elif opcao == "0":
             print("Encerrando sistema...")

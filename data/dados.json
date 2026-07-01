@@ -44,7 +44,7 @@
             "estante": "A",
             "prateleira": 2,
             "quantidade_total": 2,
-            "quantidade_disponivel": 1,
+            "quantidade_disponivel": 0,
             "etiqueta": "FIC-A-02-0002"
         }
     ],
@@ -64,6 +64,15 @@
             "livro_id": 2,
             "data_emprestimo": "2026-07-01",
             "data_limite": "2026-07-10",
+            "data_devolucao": null,
+            "status": "emprestado"
+        },
+        {
+            "id": 3,
+            "aluno_id": 2,
+            "livro_id": 2,
+            "data_emprestimo": "2026-07-01",
+            "data_limite": "2026-06-01",
             "data_devolucao": null,
             "status": "emprestado"
         }
